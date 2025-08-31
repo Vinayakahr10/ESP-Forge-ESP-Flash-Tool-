@@ -1,71 +1,100 @@
-# **ESP-Forge**
 
-**A powerful, modern GUI for flashing and monitoring Espressif chips, built with Python.**
+<h1 align="center">ESP-Forge</h1>
 
-ESP-Forge is a standalone, cross-platform tool designed to simplify the process of flashing firmware to ESP32, ESP8266, and other Espressif devices. It acts as a user-friendly graphical front-end for the powerful esptool.py command-line utility, providing a robust interface for developers, hobbyists, and professionals.
+> **ESP-Forge** – A modern, powerful GUI for flashing and monitoring Espressif chips.  
+> Built with Python, designed for **ESP32, ESP8266**, and more.  
 
-*(**Note:** You should replace the URL above with a real screenshot of your application's main window.)*
+ESP-Forge is a standalone, cross-platform utility that simplifies the process of flashing firmware to Espressif devices. Acting as a graphical front-end for the popular `esptool.py`, it makes flashing and monitoring devices seamless for **developers, hobbyists, and professionals**.  
 
-## **📥 Downloads**
+---
 
-The easiest way to use ESP-Forge is to download the latest pre-compiled executable for Windows. No installation is required.
+### ✨ Features
 
-[**➡️ Download the latest release from the GitHub Releases page**](https://www.google.com/search?q=https://github.com/your-username/ESP-Forge/releases)
+- **Multi-File Flashing** – Flash multiple `.bin` files to specific memory addresses simultaneously.  
+- **Broad Chip Support** – ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP8266, and more.  
+- **Save & Load Profiles** – Store flashing configs (files, addresses, chip type) as JSON for one-click reuse.  
+- **Advanced Device Control**  
+  - Erase flash with one click.  
+  - Get chip info (MAC, type, etc.).  
+- **Integrated Serial Monitor**  
+  - Real-time logs with timestamps.  
+  - Auto-scroll toggle.  
+  - Save logs to file.  
+- **Modern, Intuitive UI** – Clean dark theme, easy navigation.  
 
-Simply download the ESP-Forge.exe from the latest release and run it.
+---
 
-## **✨ Key Features**
+### 📥 Installation
 
-* **Multi-File Flashing:** Flash multiple binary files (.bin) to specific memory addresses simultaneously.  
-* **Broad Chip Support:** Works with a wide range of chips, including ESP32, ESP32-S2, ESP32-S3, ESP32-C3, and ESP8266.  
-* **Save & Load Profiles:** Save your complete flashing configuration (files, addresses, chip type) to a JSON file and load it later for one-click flashing.  
-* **Advanced Device Control:**  
-  * **Erase Flash:** Securely wipe the entire flash memory of the device with a single click.  
-  * **Get Chip Info:** Quickly retrieve device details like MAC address and chip type to verify your connection.  
-* **Integrated Serial Monitor:** A full-featured serial monitor to view device output, including:  
-  * Real-time timestamps for precise debugging.  
-  * Auto-scroll control.  
-  * The ability to save logs to a file.  
-* **Modern, Intuitive UI:** A clean, dark-themed interface that's easy to navigate.
+#### Download Prebuilt Executable (Windows)
+Simply grab the latest release from GitHub:
 
-## **🛠️ Running from Source (For Developers)**
+👉 [**Download ESP-Forge.exe**](https://github.com/Vinayakahr10/ESP-Forge/releases)
 
-If you prefer to run the application directly from the Python source code, follow these steps.
+Run it directly — no installation required.
 
-### **Prerequisites**
+#### Run from Source (Developers)
 
-* **Python 3.6+** installed on your system.  
-* **pip** (Python's package installer).
+```bash
+# Clone the repository
+git clone https://github.com/Vinayakahr10/ESP-Forge.git
+cd ESP-Forge
+```
 
-### **Steps**
 
-1. **Clone the Repository:**  
-   git clone \[https://github.com/your-username/ESP-Forge.git\](https://github.com/your-username/ESP-Forge.git)  
-   cd ESP-Forge
+# Install dependencies
 
-2. Install Dependencies:  
-   Run the following command in your terminal to install the necessary libraries:  
-   pip install pyserial esptool
+```
+pip install pyserial esptool
+```
 
-3. **Run the Application:**  
-   python esp32\_uploader.py
+# Run the tool
 
-## **📦 Building the Executable from Source**
+```
+python ESP-Forge.v1.py
+```
 
-You can package ESP-Forge into a single .exe file yourself using **PyInstaller**.
 
-### **Install PyInstaller**
+---
 
+### 📦 Build Your Own Executable
+
+You can package ESP-Forge into a standalone `.exe` using **PyInstaller**.
+
+```bash
+# Install PyInstaller
 pip install pyinstaller
 
-### **Build the Executable**
+# Build the executable
+pyinstaller --onefile --windowed --name "ESP-Forge" ESP-Forge.v1.py
+```
 
-Run the following command from the project directory:
+The binary will be created inside the  `/dist/` folder.
+`dist` folder will be created inside  the `ESP-Forge` folder.
 
-pyinstaller \--onefile \--windowed \--name "ESP-Forge" esp32\_uploader.py
 
-The final ESP-Forge.exe will be located in the newly created dist folder.
+---
 
-## **📄 License**
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+### ❓ Troubleshooting
+
+**Empty results / failed connection?**
+
+- Ensure the correct COM port is selected.
+    
+- Verify USB drivers are installed for your device.
+    
+- Try pressing the device **BOOT** button while flashing.
+    
+
+**Executable not running?**
+
+- Ensure Python dependencies are installed if running from source.
+    
+- On Linux/Mac, run with `python3 esp32_uploader.py`.
+    
+
+---
+
+
+
